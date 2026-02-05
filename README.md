@@ -341,7 +341,7 @@ WEIGHT_DECAY = 1e-4
 
 ### Model Performance
 
-<div align="center">
+<!-- <div align="center"> -->
 
 | Metric | Value |
 |--------|-------|
