@@ -178,16 +178,16 @@ The application displays:
 ### Pipeline Architecture
 
 ```
-┌─────────────┐    ┌──────────────┐    ┌─────────────┐    ┌─────────────┐
-│   Webcam    │───▶│   MediaPipe  │───▶│   Crop &    │───▶│     CNN     │
-│   Capture   │    │  Hand Detect │    │  Preprocess │    │  Classifier │
-└─────────────┘    └──────────────┘    └─────────────┘    └─────────────┘
-                           │                                       │
-                           ▼                                       ▼
-                   ┌──────────────┐                      ┌─────────────┐
-                   │  21 Landmark │                      │  Prediction │
-                   │    Points    │                      │  + Conf.    │
-                   └──────────────┘                      └─────────────┘
+┌─────────────┐        ┌───────────────┐       ┌───────────────┐         ┌───────────────┐
+│   Webcam    │ ───▶  │   MediaPipe    │ ───▶ │    Crop &     │   ───▶ │      CNN      │
+│   Capture   │        │  Hand Detect  │       │  Preprocess   │         │  Classifier   │
+└─────────────┘        └───────┬───────┘       └───────────────┘         └───────┬───────┘
+                               │                                                 │
+                               ▼                                                 ▼
+                         ┌───────────────┐                                ┌───────────────┐
+                         │  21 Landmark  │                                │  Prediction   │
+                         │    Points     │                                │  + Confidence │
+                         └───────────────┘                                └───────────────┘
 ```
 
 ### Detailed Process
